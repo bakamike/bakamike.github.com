@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>syntax</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<h1 id="toc_1">Vimwiki语法</h1>
+
+<h2 id="toc_1.1">表达式</h2>
+<ul>
+<li>
+<code>*加粗文本*</code>显示为 <strong>加粗文本</strong>
+
+<li>
+<code>_斜体_</code>显示为 <em>斜体</em>
+
+<li>
+<code>~~删除线~~</code>显示为 <del>删除线</del>
+
+<li>
+<code>^上标^</code> 显示为 <sup><small>上标</small></sup>
+
+<li>
+<code>,,下标,,</code> 显示为 <sub><small>下标</small></sub>
+
+</ul>
+<h2 id="toc_1.2">列表、表格和代码块</h2>
+<p>
+<code>*</code>和<code>-</code>的作用相同，建立无序列表。<code>#</code>建立有序列表。
+</p>
+
+<dl>
+<dt>词条1</dt>
+<dd>定义1</dd>
+</dl>
+
+<p>
+<code>{{{}}}</code>
+</p>
+<pre>
+
+代码1
+代码2
+代码3
+
+
+</pre>
+
+<p>
+<code>|文本1|文本2|...|文本3|</code>
+</p>
+<table>
+<tr>
+<td>
+文本1
+</td>
+<td>
+文本2
+</td>
+<td>
+...
+</td>
+<td>
+文本3
+</td>
+</tr>
+</table>
+<h2 id="toc_1.3">链接</h2>
+<ul>
+<li>
+链接：<code>http://example.com/</code> <a href="http://example.com">http://example.com</a>
+
+<li>
+带描述的链接：<code>[http://example.com/ example page]</code> [<a href="http://example.com/">http://example.com/</a> example page]
+
+<li>
+图片链接：<code>http://vimwiki.googlecode.com/hg/screenshots/vimwiki1.png</code> <a href="http://vimwiki.googlecode.com/hg/screenshots/vimwiki1.png">http://vimwiki.googlecode.com/hg/screenshots/vimwiki1.png</a>
+
+<li>
+链接到本地图片：<code>[images/pic.jpg]</code> <a href="images/pic.jpg.html">images/pic.jpg</a>
+
+<li>
+带描述的图片：<code>[[images/pic.jpg| 这是对图片的描述]]</code> <a href="images/pic.jpg.html">这是对图片的描述</a>
+
+<li>
+指定图片的大小：<code>[[http://vimwiki.googlecode.com/hg/screenshots/vimwiki1.png| 描述|width:150px;]]</code> <a href="http://vimwiki.googlecode.com/hg/screenshots/vimwiki1.png">描述|width:150px</a>
+
+<li>
+图片链接：<code>[[http://vimwiki.googlecode.com/hg/screenshots/vimwiki1.png]]</code> <a href="http://vimwiki.googlecode.com/hg/screenshots/vimwiki1.png">http://vimwiki.googlecode.com/hg/screenshots/vimwiki1.png</a>
+
+<li>
+<code>[[http:|描述]]</code> <a href="http:">描述</a>
+
+<li>
+<code>[[http:|描述|]]</code> <a href="http:">描述|</a>
+
+<li>
+链接到本地文件：<code>[[file://C:/book.pdf]]</code> <a href="file://C://book.pdf">file://C:/book.pdf</a>
+
+</ul>
+
+</body>
+</html>
