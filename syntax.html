@@ -7,6 +7,17 @@
 </head>
 <body>
 
+<h1>Vimwiki语法目录</h1>
+<div class="toc">
+<ul>
+<li><a href="#toc_1">Vimwiki语法</a>
+<ul>
+<li><a href="#toc_1.1">表达式</a>
+<li><a href="#toc_1.2">列表、表格和代码块</a>
+<li><a href="#toc_1.3">链接</a>
+</ul>
+</ul>
+</div>
 <h1 id="toc_1">Vimwiki语法</h1>
 
 <h2 id="toc_1.1">表达式</h2>
@@ -28,77 +39,192 @@
 
 </ul>
 <h2 id="toc_1.2">列表、表格和代码块</h2>
-<p>
-<code>*</code>和<code>-</code>的作用相同，建立无序列表。<code>#</code>建立有序列表。
-</p>
+<ul>
+<li>
+以四个（或更多）空格起始的行为引用行
+
+<li>
+<code>*</code>和<code>-</code>（必须跟空格）为建立无序列表。<code>#</code>建立有序列表。
+
+<li>
+以<code>%%</code>起始的行不会显示在HTML中
+
+<li>
+四个或更多的<code>-</code>将输出水平线<code>----</code>
+
+</ul>
+
+<hr />
+<blockquote>
+这是一个引用
+</blockquote>
+
+
 
 <dl>
 <dt>词条1</dt>
 <dd>定义1</dd>
 </dl>
 
-<p>
-<code>{{{}}}</code>
-</p>
+
 <pre>
-
-代码1
-代码2
-代码3
-
-
+| Year | Temperature (low) | Temperature (high) |
+|------|-------------------|--------------------|
+| 1900 | -10               | 25                 |
+| 1910 | -15               | 30                 |
+| 1920 | -10               | 32                 |
+| 1930 | _N/A_             | _N/A_              |
+| 1940 | -2                | 40                 |
 </pre>
 
-<p>
-<code>|文本1|文本2|...|文本3|</code>
-</p>
+
 <table>
 <tr>
+<th>
+Year
+</th>
+<th>
+Temperature (low)
+</th>
+<th>
+Temperature (high)
+</th>
+</tr>
+<tr>
 <td>
-文本1
+1900
 </td>
 <td>
-文本2
+-10
 </td>
 <td>
-...
+25
+</td>
+</tr>
+<tr>
+<td>
+1910
 </td>
 <td>
-文本3
+-15
+</td>
+<td>
+30
+</td>
+</tr>
+<tr>
+<td>
+1920
+</td>
+<td>
+-10
+</td>
+<td>
+32
+</td>
+</tr>
+<tr>
+<td>
+1930
+</td>
+<td>
+<em>N/A</em>
+</td>
+<td>
+<em>N/A</em>
+</td>
+</tr>
+<tr>
+<td>
+1940
+</td>
+<td>
+-2
+</td>
+<td>
+40
 </td>
 </tr>
 </table>
+
+<pre>
+| a  | b  | c | d |
+| \/ | e  | &gt; | f |
+| \/ | \/ | &gt; | g |
+| h  | &gt;  | &gt; | &gt; |
+</pre>
+<table>
+<tr>
+<td rowspan="3">
+a
+</td>
+<td>
+b
+</td>
+<td>
+c
+</td>
+<td>
+d
+</td>
+</tr>
+<tr>
+<td rowspan="2" colspan="2">
+e
+</td>
+<td>
+f
+</td>
+</tr>
+<tr>
+<td>
+g
+</td>
+</tr>
+<tr>
+<td colspan="4">
+h
+</td>
+</tr>
+</table>
+
+
 <h2 id="toc_1.3">链接</h2>
 <ul>
 <li>
 链接：<code>http://example.com/</code> <a href="http://example.com">http://example.com</a>
 
+<ul>
 <li>
-带描述的链接：<code>[http://example.com/ example page]</code> [<a href="http://example.com/">http://example.com/</a> example page]
+<code>mailto:foo@bar.com</code> <a href="mailto:foo@bar.com">mailto:foo@bar.com</a>
 
 <li>
-图片链接：<code>http://vimwiki.googlecode.com/hg/screenshots/vimwiki1.png</code> <a href="http://vimwiki.googlecode.com/hg/screenshots/vimwiki1.png">http://vimwiki.googlecode.com/hg/screenshots/vimwiki1.png</a>
+<code>ftp://vim.org</code> <a href="ftp://vim.org">ftp://vim.org</a>
+
+</ul>
+<li>
+带描述的链接：<code>[[http://example.com/|example page]]</code> <a href="http://example.com/">example page</a>
 
 <li>
 链接到本地图片：<code>[images/pic.jpg]</code> <a href="images/pic.jpg.html">images/pic.jpg</a>
 
 <li>
-带描述的图片：<code>[[images/pic.jpg| 这是对图片的描述]]</code> <a href="images/pic.jpg.html">这是对图片的描述</a>
+带描述的图片：<code>[[images/pic.jpg| 图片说明]]</code> <a href="images/pic.jpg.html">图片说明</a>
 
 <li>
-指定图片的大小：<code>[[http://vimwiki.googlecode.com/hg/screenshots/vimwiki1.png| 描述|width:150px;]]</code> <a href="http://vimwiki.googlecode.com/hg/screenshots/vimwiki1.png">描述|width:150px</a>
+图片链接：<code>{{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png|Vimwiki}}</code> <img src="http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png" alt="Vimwiki" />
 
 <li>
-图片链接：<code>[[http://vimwiki.googlecode.com/hg/screenshots/vimwiki1.png]]</code> <a href="http://vimwiki.googlecode.com/hg/screenshots/vimwiki1.png">http://vimwiki.googlecode.com/hg/screenshots/vimwiki1.png</a>
+重设图片大小：<code>{{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png|cool stuff|style="width:150px; height:120px;"}}</code> <img src="http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png" alt="cool stuff" style="width:150px; height:120px;" />`
 
 <li>
-<code>[[http:|描述]]</code> <a href="http:">描述</a>
+带缩略图的链接：<code>[[http://code.google.com/p/vimwiki/|{{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png}}]]</code> <a href="http://code.google.com/p/vimwiki/"><img src="http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png" /></a>`
 
 <li>
-<code>[[http:|描述|]]</code> <a href="http:">描述|</a>
+链接到本地文件（绝对路径）：<code>[[file://C:/book.pdf]]</code> <a href="file://C://book.pdf">file://C:/book.pdf</a>
 
 <li>
-链接到本地文件：<code>[[file://C:/book.pdf]]</code> <a href="file://C://book.pdf">file://C:/book.pdf</a>
+链接到本地文件（相对路径）：<code>[[local:../assets/data.csv|data (CSV)]]</code> <a href="file://C:\Documents and Settings\Administrator\vimwiki/../assets/data.csv">data (CSV)</a>
 
 </ul>
 
